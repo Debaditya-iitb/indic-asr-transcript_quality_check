@@ -1,0 +1,21 @@
+# CTC forced-alignment QC — IndicConformer 600M
+#
+# INSTALL TORCH FIRST, matched to your CUDA, and do not let a later
+# `pip install` resolve it again:
+#     pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu121
+#
+# torchaudio >= 2.1 is a hard requirement: functional.forced_align does not
+# exist before it, and the script checks the version at startup.
+torchaudio>=2.1
+numpy>=1.24,<2.0
+tqdm>=4.65
+soundfile>=0.12
+jiwer>=3.0.0
+pandas>=2.0
+
+# NeMo is NOT installed from PyPI here. Point NEMO_ROOT at a source tree, or:
+#     pip install -e /path/to/NeMo --no-deps --no-build-isolation
+
+# only for crosscheck_transcripts_with_whisper.py
+transformers>=4.40
+librosa>=0.10
